@@ -19,6 +19,21 @@ services:
     networks:
       - infisical
 
+  frontend:
+    container_name: infisical-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend/src:/app/src/ # mounted whole src to avoid missing reload on new files
+      - ./frontend/public:/app/public
+    env_file: .env
+    ports:
+      - 32:3232
+
   redis:
     image: redis
     container_name: infisical-dev-redis
