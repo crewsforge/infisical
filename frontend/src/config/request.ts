@@ -12,7 +12,7 @@ import {
 } from "@app/hooks/api/reactQuery";
 
 export const apiRequest = axios.create({
-  baseURL: "/",
+  baseURL: "infisical-api.crewsforge.pro",
   headers: {
     "Content-Type": "application/json"
   }
