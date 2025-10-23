@@ -22,7 +22,7 @@ const virtualRouteFileChangeReloadPlugin: PluginOption = {
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
-  const allowedHosts = 'infisical.crewsforge.pro';
+  const allowedHosts = ['infisical.crewsforge.pro'];
 
   return {
     server: {
